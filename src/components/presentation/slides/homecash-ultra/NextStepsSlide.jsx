@@ -1,5 +1,5 @@
 import { HomeCashUltraCanvas, HomeCashUltraSectionLabel, HomeCashUltraTitle } from './homeCashUltraShared';
-import finalSlideRightImage from '../../../assets/ultra assets/imagem direita slide final.png';
+import finalSlideRightImage from '../../../../assets/ultra assets/imagem direita slide final.png';
 
 const STEPS = [
   ['1', 'An\u00e1lise jur\u00eddica', 'Come\u00e7amos pela an\u00e1lise jur\u00eddica. Para iniciar, s\u00f3 precisamos de dois documentos: CNH e certid\u00e3o de estado civil.'],

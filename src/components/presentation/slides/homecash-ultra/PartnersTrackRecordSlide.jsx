@@ -1,5 +1,5 @@
-import ademiconLogo from '../../../assets/ultra assets/ademicon-seeklogo 1.png';
-import rooftopLogo from '../../../assets/ultra assets/Cópia de rooftop-logo+tagline2_principal.png';
+import ademiconLogo from '../../../../assets/ultra assets/ademicon-seeklogo 1.png';
+import rooftopLogo from '../../../../assets/ultra assets/Cópia de rooftop-logo+tagline2_principal.png';
 import { HomeCashUltraAccent, HomeCashUltraCanvas, HomeCashUltraCard, HomeCashUltraSectionLabel, HomeCashUltraTitle } from './homeCashUltraShared';
 
 const PARTNERS = [

@@ -1,6 +1,6 @@
-import coverImage from '../../../assets/ultra assets/imagem capa.png';
-import rooftopLogo from '../../../assets/ultra assets/Cópia de rooftop-logo_bco.png';
-import coverFeatures from '../../../assets/ultra assets/seguraça-solução-capital.png';
+import coverImage from '../../../../assets/ultra assets/imagem capa.png';
+import rooftopLogo from '../../../../assets/ultra assets/Cópia de rooftop-logo_bco.png';
+import coverFeatures from '../../../../assets/ultra assets/seguraça-solução-capital.png';
 import { HomeCashUltraAccent, HomeCashUltraCanvas } from './homeCashUltraShared';
 
 export const HomeCashUltraCoverSlide = () => (

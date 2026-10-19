@@ -1,4 +1,4 @@
-import heroImage from '../../../assets/ultra assets/imagem slide 4.png';
+import heroImage from '../../../../assets/ultra assets/imagem slide 4.png';
 import { DollarSign, House, Mail } from 'lucide-react';
 import { Fragment } from 'react';
 import { HomeCashUltraAccent, HomeCashUltraCanvas, HomeCashUltraCard, HomeCashUltraSectionLabel, HomeCashUltraTitle } from './homeCashUltraShared';
