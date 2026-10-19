@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/fonts/excon/Excon-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/fonts/excon/Excon-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/fonts/excon/Excon-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/fonts/excon/Excon-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-blue-dark: #1e3a8a;
+  --color-brand-blue-light: #3b82f6;
+  --color-brand-red-dark: #991b1b;
+  --color-brand-red-light: #ef4444;
+  --color-brand-gray-light: #f3f4f6;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--color-brand-gray-light);
+  font-family: 'Excon', 'Trebuchet MS', system-ui, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.font-excon {
+  font-family: 'Excon', 'Trebuchet MS', system-ui, sans-serif;
+}
+
+.presentation-slide-page,
+.presentation-slide-page * {
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.presentation-print-deck {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.presentation-print-deck .print-slide {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+.presentation-print-deck .presentation-slide-page {
+  width: 1920px;
+  height: 1080px;
+}
+
+.presentation-shell.is-exporting .presentation-print-deck {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 1080px;
+  opacity: 1;
+  overflow: visible;
+}
+
+@media print {
+  @page {
+    size: 13.333in 7.5in;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    height: auto;
+    overflow: visible;
+    background: #fff !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .presentation-toolbar,
+  .presentation-workspace {
+    display: none !important;
+  }
+
+  .presentation-shell {
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  .presentation-print-deck {
+    display: block !important;
+    position: static;
+    left: auto;
+    top: auto;
+    width: 13.333in;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0;
+    background: #fff;
+  }
+
+  .print-slide {
+    display: block;
+    width: 13.333in;
+    height: 7.5in;
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+    margin-bottom: 0;
+  }
+
+  .print-slide:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .print-slide .presentation-slide-page {
+    width: 13.333in !important;
+    height: 7.5in !important;
+    box-shadow: none !important;
+    border-color: #e2e8f0 !important;
+  }
+}
