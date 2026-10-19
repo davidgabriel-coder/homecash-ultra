@@ -27,6 +27,22 @@ import { PropertyStartingPointSlide } from './slides/homecash-ultra/PropertyStar
 import { RepurchaseModelsSlide } from './slides/homecash-ultra/RepurchaseModelsSlide';
 import { SimulationSummarySlide } from './slides/homecash-ultra/SimulationSummarySlide';
 import { WhoWithYouSlide } from './slides/homecash-ultra/WhoWithYouSlide';
+import { HomeCashUltraAgendaSlide as CartaContempladaAgendaSlide } from './slides/homecash-ultra-carta-contemplada/HomeCashUltraAgendaSlide';
+import { HomeCashUltraBenefitsSlide as CartaContempladaBenefitsSlide } from './slides/homecash-ultra-carta-contemplada/HomeCashUltraBenefitsSlide';
+import { HomeCashUltraCoverSlide as CartaContempladaCoverSlide } from './slides/homecash-ultra-carta-contemplada/HomeCashUltraCoverSlide';
+import { AfterContemplationSlide as CartaContempladaAfterContemplationSlide } from './slides/homecash-ultra-carta-contemplada/AfterContemplationSlide';
+import { AudienceFitSlide as CartaContempladaAudienceFitSlide } from './slides/homecash-ultra-carta-contemplada/AudienceFitSlide';
+import { CombinationIdeaSlide as CartaContempladaCombinationIdeaSlide } from './slides/homecash-ultra-carta-contemplada/CombinationIdeaSlide';
+import { MarketComparisonSlide as CartaContempladaMarketComparisonSlide } from './slides/homecash-ultra-carta-contemplada/MarketComparisonSlide';
+import { MonthlyValuesSlide as CartaContempladaMonthlyValuesSlide } from './slides/homecash-ultra-carta-contemplada/MonthlyValuesSlide';
+import { NextStepsSlide as CartaContempladaNextStepsSlide } from './slides/homecash-ultra-carta-contemplada/NextStepsSlide';
+import { OperationFlowSlide as CartaContempladaOperationFlowSlide } from './slides/homecash-ultra-carta-contemplada/OperationFlowSlide';
+import { OperationSafetySlide as CartaContempladaOperationSafetySlide } from './slides/homecash-ultra-carta-contemplada/OperationSafetySlide';
+import { PartnersTrackRecordSlide as CartaContempladaPartnersTrackRecordSlide } from './slides/homecash-ultra-carta-contemplada/PartnersTrackRecordSlide';
+import { PropertyStartingPointSlide as CartaContempladaPropertyStartingPointSlide } from './slides/homecash-ultra-carta-contemplada/PropertyStartingPointSlide';
+import { RepurchaseModelsSlide as CartaContempladaRepurchaseModelsSlide } from './slides/homecash-ultra-carta-contemplada/RepurchaseModelsSlide';
+import { SimulationSummarySlide as CartaContempladaSimulationSummarySlide } from './slides/homecash-ultra-carta-contemplada/SimulationSummarySlide';
+import { WhoWithYouSlide as CartaContempladaWhoWithYouSlide } from './slides/homecash-ultra-carta-contemplada/WhoWithYouSlide';
 import { DEFAULT_PRESENTATION_TEXT_CONTENT } from './presentationTextLibrary';
 
 const SLIDE_COMPONENTS = {
@@ -59,7 +75,23 @@ const SLIDE_COMPONENTS = {
   'homecash-who-with-you': WhoWithYouSlide,
   'homecash-safety': OperationSafetySlide,
   'homecash-benefits': HomeCashUltraBenefitsSlide,
-  'homecash-next-steps': NextStepsSlide
+  'homecash-next-steps': NextStepsSlide,
+  'carta-contemplada-cover': CartaContempladaCoverSlide,
+  'carta-contemplada-agenda': CartaContempladaAgendaSlide,
+  'carta-contemplada-property-start': CartaContempladaPropertyStartingPointSlide,
+  'carta-contemplada-combination': CartaContempladaCombinationIdeaSlide,
+  'carta-contemplada-partners': CartaContempladaPartnersTrackRecordSlide,
+  'carta-contemplada-audience-fit': CartaContempladaAudienceFitSlide,
+  'carta-contemplada-operation-flow': CartaContempladaOperationFlowSlide,
+  'carta-contemplada-repurchase-models': CartaContempladaRepurchaseModelsSlide,
+  'carta-contemplada-simulation': CartaContempladaSimulationSummarySlide,
+  'carta-contemplada-after-contemplation': CartaContempladaAfterContemplationSlide,
+  'carta-contemplada-monthly-values': CartaContempladaMonthlyValuesSlide,
+  'carta-contemplada-market-comparison': CartaContempladaMarketComparisonSlide,
+  'carta-contemplada-who-with-you': CartaContempladaWhoWithYouSlide,
+  'carta-contemplada-safety': CartaContempladaOperationSafetySlide,
+  'carta-contemplada-benefits': CartaContempladaBenefitsSlide,
+  'carta-contemplada-next-steps': CartaContempladaNextStepsSlide
 };
 
 export function PresentationSlideRenderer({ slide, chartProps, presentationTextContent = DEFAULT_PRESENTATION_TEXT_CONTENT }) {

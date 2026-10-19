@@ -1,8 +1,10 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import Questionnaire from './components/Questionnaire';
 import { DEFAULT_SCENARIO_ID, getDebtScenario } from './domain/debtScenarios';
 
 const PresentationStudio = lazy(() => import('./components/PresentationStudio'));
+
+const preloadPresentationStudio = () => import('./components/PresentationStudio');
 
 const LoadingPresentation = () => (
   <div className="flex h-full w-full items-center justify-center bg-[#f3f3f3] text-sm font-semibold text-slate-500">
@@ -21,6 +23,25 @@ function App() {
   const [propertyValue, setPropertyValue] = useState(2000000);
   const [initialAnalysisApproved, setInitialAnalysisApproved] = useState(null);
   const [scenarioId, setScenarioId] = useState(DEFAULT_SCENARIO_ID);
+
+  useEffect(() => {
+    let idleCallbackId;
+    let timeoutId;
+    const preload = () => {
+      preloadPresentationStudio().catch(() => {});
+    };
+
+    if ('requestIdleCallback' in window) {
+      idleCallbackId = window.requestIdleCallback(preload, { timeout: 2000 });
+    } else {
+      timeoutId = window.setTimeout(preload, 1000);
+    }
+
+    return () => {
+      if (idleCallbackId !== undefined) window.cancelIdleCallback?.(idleCallbackId);
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   const selectedScenario = getDebtScenario(scenarioId);
 
