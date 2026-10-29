@@ -18,7 +18,7 @@ export const WhoWithYouSlide = () => (
       Quem já fez, e quem <HomeCashUltraAccent>caminha junto</HomeCashUltraAccent><br />em cada etapa.
     </HomeCashUltraTitle>
 
-    <HomeCashUltraCard className="absolute bottom-[12%] left-[5.2%] top-[34.7%] w-[50.5%] rounded-[1.2cqw] p-[2cqw]">
+    <HomeCashUltraCard className="absolute bottom-[9%] left-[5.2%] top-[35.6%] w-[50.5%] rounded-[1.2cqw] p-[2cqw]">
       <div className="flex items-start justify-between gap-[1cqw]">
         <div className="flex items-center gap-[1.15cqw]">
           <div aria-hidden="true" className="h-[3.6cqw] w-[3.6cqw] shrink-0 rounded-full bg-[linear-gradient(135deg,#1C2D7F,#5968ba)]" />
@@ -44,7 +44,7 @@ export const WhoWithYouSlide = () => (
       </blockquote>
     </HomeCashUltraCard>
 
-    <div className="absolute right-[5.2%] top-[48.5%] grid h-[25.5%] w-[37.3%] grid-rows-2 gap-[2.2cqw]">
+    <div className="absolute right-[5.2%] top-[50.1%] grid h-[26.4%] w-[37.3%] grid-rows-2 gap-[1.2cqw]">
       {PARTNERS.map(([name, body]) => (
         <HomeCashUltraCard key={name} className="grid grid-cols-[8.7cqw_1fr] items-start gap-[1cqw] rounded-[0.9cqw] px-[1.65cqw] py-[1.75cqw]">
           <strong className="text-[1.35cqw] leading-tight">{name}</strong>

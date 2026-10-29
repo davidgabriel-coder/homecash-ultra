@@ -4,8 +4,8 @@ import { HomeCashUltraAccent, HomeCashUltraCanvas, HomeCashUltraCard, HomeCashUl
 
 const PARTNERS = [
   { name: 'Rooftop', body: 'A Rooftop estrutura a operação de ponta a ponta: avalia o imóvel, libera a liquidez do HomeCash Ultra, conduz o lance junto à Ademicon, organiza o financiamento com a OXY e acompanha cada etapa até a quitação.', foot: 'Estruturação e acompanhamento' },
-  { name: 'Ademicon', body: 'Os cenários de carta vêm da base da Ademicon: mais de 52 mil assembleias reais e 2.055 contemplações efetivas, filtradas por prazo. É histórico de mercado, não projeção.', foot: 'Administradora do consórcio' },
-  { name: 'OXY', body: 'No Modelo 2, a recompra é financiada pela OXY, dentro da Rede de Proteção, com limite de até 80% do valor de compra e venda e 70% da avaliação do imóvel.', foot: 'Quando entra financiamento' }
+  { name: 'Ademicon', body: <>Os cenários de carta vêm da base da <strong>Ademicon</strong>: mais de 52 mil assembleias reais e 2.055 contemplações efetivas, filtradas por prazo. É histórico de mercado, não projeção.</>, foot: 'Ademicon, administradora do consórcio' },
+  { name: 'OXY', body: <>No Modelo 2, a recompra é financiada pela <strong>OXY</strong>, dentro da Rede de Proteção, com limite de até 80% do valor de compra e venda e 70% da avaliação do imóvel.</>, foot: 'OXY, quando entra financiamento' }
 ];
 
 export const PartnersTrackRecordSlide = () => (

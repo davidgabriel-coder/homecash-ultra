@@ -4,7 +4,6 @@ const ROWS = [
   ['Capital liberado','R$ 815.385','R$ 636.000','+R$ 179.385'],
   ['Do valor do imóvel','76,9%','60%','+16,9 p.p.'],
   ['CET ao ano','14,76%','28,69%','−13,9 p.p.'],
-  ['Custo total','R$ 2,43 mi','R$ 3,13 mi','−R$ 694 mil'],
   ['IOF','Zero','Incluso','Sem IOF']
 ];
 

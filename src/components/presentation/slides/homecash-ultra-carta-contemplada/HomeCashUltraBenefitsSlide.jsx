@@ -2,7 +2,7 @@ import { HomeCashUltraAccent, HomeCashUltraCanvas, HomeCashUltraSectionLabel, Ho
 
 const BENEFITS = [
   ['~60 dias', 'Até o dinheiro na conta', 'Carta já contemplada: sem sorteio e sem disputa de lance.'],
-  ['R$ 149 mil', 'A menos no custo total', 'Comparado ao home equity, e quitado 12 anos antes.'],
+  ['R$ 149 mil', 'A menos no custo total', 'Comparado ao home equity, e quitado 12,5 anos antes.'],
   ['Flexível', 'Garantia', 'Seu imóvel e outros, seus ou de terceiros: terreno, comercial ou residencial.'],
   ['90', 'Parcelas', 'Operação quitada em 7,5 anos, e não em 20.']
 ];

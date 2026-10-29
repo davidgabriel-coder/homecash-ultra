@@ -33,7 +33,7 @@ const STEPS = [
   {
     icon: DollarSign,
     title: 'Recomprar',
-    body: 'O cliente escolhe o caminho.',
+    body: 'O cliente escolhe.',
     left: '49.1%',
     highlighted: true
   }
@@ -69,7 +69,7 @@ export const OperationFlowSlide = () => (
       Um fluxo só, até o ponto<br />onde <HomeCashUltraAccent>você escolhe.</HomeCashUltraAccent>
     </HomeCashUltraTitle>
     <p className="absolute left-[5.2%] top-[34.5%] text-[1.15cqw] leading-[1.4]">
-      A única bifurcação real acontece na hora da recompra; antes disso, o caminho é único.
+      A única bifurcação real acontece na hora da recompra, antes disso, o caminho é único.
     </p>
 
     <div className="absolute inset-0">{FLOW_ARROW_SVG}</div>
@@ -105,7 +105,7 @@ export const OperationFlowSlide = () => (
         <Check className="h-[2.55cqw] w-[2.55cqw]" strokeWidth={1.8} aria-hidden="true" />
       </div>
       <h2 className="mt-[0.65cqw] text-[1cqw] font-[700] leading-[1.2]">Operação encerrada</h2>
-      <p className="mt-[0.3cqw] text-[0.85cqw] leading-[1.24]">Consórcio e, se houver, financiamento seguem até a quitação total.</p>
+      <p className="mt-[0.3cqw] text-[0.85cqw] leading-[1.24]">Consórcio e, se houver, financiamento seguem seu prazo próprio até a quitação total.</p>
     </section>
   </HomeCashUltraCanvas>
 );

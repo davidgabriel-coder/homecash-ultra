@@ -26,21 +26,21 @@ const QuestionCard = ({ question, answer, number }) => (
 
 export const OperationSafetySlide = () => (
   <HomeCashUltraCanvas>
-    <HomeCashUltraSectionLabel number="11" label="Conforto" className="absolute left-[5.2%] top-[10.8%] -translate-y-[20px] text-[1.2cqw]" />
-    <HomeCashUltraTitle className="absolute left-[5.2%] top-[17.2%] -translate-y-[20px] w-[47%] text-[4.05cqw]">
+    <HomeCashUltraSectionLabel number="11" label="Conforto" className="absolute left-[5.2%] top-[10.8%] text-[1.2cqw]" />
+    <HomeCashUltraTitle className="absolute left-[5.2%] top-[17.2%] w-[47%] text-[4.05cqw]">
       E se algo <HomeCashUltraAccent>sair do plano?</HomeCashUltraAccent>
     </HomeCashUltraTitle>
-    <p className="absolute right-[4.3%] top-[17.5%] -translate-y-[20px] w-[42.2%] text-[1.36cqw] leading-[1.48]">
+    <p className="absolute right-[4.3%] top-[17.5%] w-[42.2%] text-[1.36cqw] leading-[1.48]">
       Mexer no patrimônio não é uma decisão leve. Estas são as respostas para as perguntas que costumam vir, antes que você precise fazê-las.
     </p>
 
-    <div className="absolute left-[5.2%] right-[5.2%] top-[28%] grid h-[29%] grid-cols-3 gap-[1.3cqw]">
+    <div className="absolute left-[5.2%] right-[5.2%] top-[29.3%] grid h-[30.3%] grid-cols-3 gap-[1.3cqw]">
       {FAQ.slice(0, 3).map(([question, answer], index) => (
         <QuestionCard key={question} question={question} answer={answer} number={index + 1} />
       ))}
     </div>
 
-    <div className="absolute left-[5.2%] right-[5.2%] top-[59.3%] grid h-[25.8%] grid-cols-[0.5fr_1fr] gap-[1.3cqw]">
+    <div className="absolute left-[5.2%] right-[5.2%] top-[61.7%] grid h-[26.9%] grid-cols-[0.5fr_1fr] gap-[1.3cqw]">
       <QuestionCard question={FAQ[3][0]} answer={FAQ[3][1]} number="4" />
       <div className="rounded-[1.1cqw] bg-[#1C2D7F] p-[2cqw] text-white">
         <h2 className="text-[1.38cqw] font-[700] text-[#EDB424]">O que não muda</h2>

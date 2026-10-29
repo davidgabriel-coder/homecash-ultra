@@ -1,7 +1,7 @@
 import { HomeCashUltraAccent, HomeCashUltraCanvas, HomeCashUltraEyebrow, HomeCashUltraSectionLabel, HomeCashUltraTitle } from './homeCashUltraShared';
 
 const PERIODS = [
-  { period:'Mês 0', title:'Liquidez vira lance', rows:[['Liquidez HomeCash','+ R$ 530.000'],['Lance no consórcio','100% da liquidez']], total:['Carta no 3º mês','R$ 815.385'], tone:'gold' },
+  { period:'Mês 0', title:'Liquidez vira lance', rows:[['Liquidez HomeCash','R$ 530.000'],['Dívidas informadas','– R$ 0'],['Liquidez disponível HomeCash','R$ 530.000'],['Lance no consórcio','100%']], total:['Carta no 3º mês','R$ 815.385'], tone:'gold' },
   { period:'Meses 1 a 3', title:'Até a contemplação', rows:[['Consórcio','R$ 4.183'],['Aluguel HomeCash','R$ 3.710']], total:['Por mês','R$ 7.893'] },
   { period:'Meses 4 a 12', title:'Carta contemplada', rows:[['Consórcio','R$ 1.848'],['Aluguel HomeCash','R$ 3.710'],['ITBI e cartório (mês 12)','R$ 26.200']], total:['Por mês','R$ 5.558'], tone:'gold' },
   { period:'Mês 13 em diante', title:'Recompra financiada', rows:[['Consórcio (até o mês 230)','R$ 1.848'],['Financiamento OXY','R$ 8.033']], total:['Por mês','R$ 9.881'], tone:'dark' }
@@ -19,6 +19,5 @@ export const MonthlyValuesSlide = () => (
         <div className="mt-auto border-t-2 border-current/50 pt-[0.55cqw]"><div className="flex justify-between gap-[0.3cqw] text-[0.78cqw]"><strong>{item.total[0]}</strong><strong>{item.total[1]}</strong></div></div>
       </section>)}
     </div>
-    <div className="absolute bottom-[8%] right-[5.2%] rounded-[0.9cqw] bg-[#EDB424] px-[1.5cqw] py-[0.9cqw] text-[#1C2D7F]"><HomeCashUltraEyebrow className="text-[#1C2D7F]">Custo total (soma de tudo o que é pago)</HomeCashUltraEyebrow><strong className="text-[1.75cqw]">R$ 2.430.677</strong></div>
   </HomeCashUltraCanvas>
 );

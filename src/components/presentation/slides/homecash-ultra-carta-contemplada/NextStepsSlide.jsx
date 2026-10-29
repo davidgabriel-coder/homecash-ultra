@@ -3,7 +3,7 @@ import { HomeCashUltraCanvas, HomeCashUltraSectionLabel, HomeCashUltraTitle } fr
 import finalSlideRightImage from '../../../../assets/ultra assets/imagem direita slide final.png';
 
 const STEPS = [
-  ['1', 'Análise jurídica', 'Começamos pela análise jurídica. Para iniciar, só precisamos de dois documentos: CNH e certidão de estado civil.'],
+  ['1', 'Análise jurídica', <>Começamos pela análise jurídica. Para iniciar, só precisamos de dois documentos: <strong className="font-[700]">CNH</strong> e <strong className="font-[700]">certidão de estado civil</strong>.</>],
   ['2', 'Carta na Ademicon', 'Com a análise validada, conversamos com a Ademicon e reservamos a carta contemplada do tamanho certo para você.'],
   ['3', 'Dinheiro na conta', 'Estrutura assinada, o dinheiro chega em cerca de 60 dias.']
 ];

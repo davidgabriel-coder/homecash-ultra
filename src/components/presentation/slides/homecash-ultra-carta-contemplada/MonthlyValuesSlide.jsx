@@ -4,7 +4,12 @@ const PERIODS = [
   {
     period: 'Mês 0',
     title: 'Liquidez',
-    rows: [['Liquidez HomeCash', '+ R$ 530.000'], ['Ágio da carta (30%)', '− R$ 459.000']],
+    rows: [
+      ['Liquidez HomeCash', 'R$ 530.000'],
+      ['Dívidas informadas', '− R$ 0'],
+      ['Liquidez disponível HomeCash', 'R$ 530.000', true],
+      ['Ágio da carta (30%)', '− R$ 459.000']
+    ],
     total: ['Fica com você', 'R$ 71.000'],
     tone: 'gold'
   },
@@ -32,13 +37,13 @@ const PERIODS = [
 
 export const MonthlyValuesSlide = () => (
   <HomeCashUltraCanvas>
-    <HomeCashUltraSectionLabel number="08" label="Valores" className="absolute left-[5.2%] top-[12.8%] text-[1.05cqw]" />
-    <HomeCashUltraTitle className="absolute left-[5.2%] top-[20.2%] text-[4.1cqw] leading-[1.08] tracking-[-0.04em]">
+    <HomeCashUltraSectionLabel number="08" label="Valores" className="absolute left-[5.2%] top-[10.8%] text-[1.05cqw]" />
+    <HomeCashUltraTitle className="absolute left-[5.2%] top-[17.2%] text-[4.1cqw] leading-[1.08] tracking-[-0.04em]">
       Valores da operação, <HomeCashUltraAccent>mês a mês.</HomeCashUltraAccent>
     </HomeCashUltraTitle>
-    <p className="absolute left-[5.2%] top-[31.2%] text-[1.08cqw]">Tudo o que entra e tudo o que sai, do início à última parcela.</p>
+    <p className="absolute left-[5.2%] top-[26.8%] text-[1.08cqw]">Tudo o que entra e tudo o que sai, do início à última parcela.</p>
 
-    <div className="absolute left-[5.2%] right-[5.2%] top-[39.2%] grid h-[36.2%] grid-cols-4 gap-[1.2cqw]">
+    <div className="absolute left-[5.2%] right-[5.2%] top-[34.2%] grid h-[37.4%] grid-cols-4 gap-[1.2cqw]">
       {PERIODS.map((item) => (
         <section
           key={item.period}
@@ -55,8 +60,8 @@ export const MonthlyValuesSlide = () => (
           </HomeCashUltraEyebrow>
           <h2 className="mt-[0.35cqw] border-b border-current/15 pb-[0.5cqw] text-[1.42cqw] font-[700] leading-tight">{item.title}</h2>
           <div className="mt-[0.35cqw]">
-            {item.rows.map(([label, value]) => (
-              <div key={label} className="flex justify-between gap-[0.35cqw] border-b border-current/10 py-[0.55cqw] text-[0.88cqw] leading-[1.2]">
+            {item.rows.map(([label, value, emphasize]) => (
+              <div key={label} className={`flex justify-between gap-[0.35cqw] border-b border-current/10 py-[0.55cqw] text-[0.88cqw] leading-[1.2] ${emphasize ? 'font-[700]' : ''}`}>
                 <span>{label}</span><strong className="shrink-0 whitespace-nowrap">{value}</strong>
               </div>
             ))}
@@ -68,9 +73,5 @@ export const MonthlyValuesSlide = () => (
       ))}
     </div>
 
-    <div className="absolute bottom-[10.2%] right-[5.2%] w-[28%] rounded-[0.9cqw] bg-[#EDB424] px-[1.5cqw] py-[0.9cqw] text-[#1C2D7F]">
-      <HomeCashUltraEyebrow className="text-[0.75cqw] text-[#1C2D7F]">Custo total (soma de tudo o que é pago)</HomeCashUltraEyebrow>
-      <strong className="mt-[0.2cqw] block text-[1.95cqw] leading-none">R$ 2.976.420</strong>
-    </div>
   </HomeCashUltraCanvas>
 );
