@@ -15,10 +15,13 @@ import {
   DEFAULT_PRESENTATION_DECK_ID,
   HOMECASH_ULTRA_CARTA_CONTEMPLADA_DECK_ID,
   HOMECASH_ULTRA_DECK_ID,
+  PLANO_PERSONALIZADO_V2_DECK_ID,
   PRESENTATION_DECK_OPTIONS
 } from './presentation/presentationConfig';
 import { PresentationSlideRenderer } from './presentation/PresentationSlides';
 import { getPresentationTextContent } from './presentation/presentationTextLibrary';
+import { getPlanoV2TextContent, PLANO_V2_DEFAULT_CLIENT_NAME } from './presentation/slides/Plano personalizadov2/planoPersonalizadoV2TextLibrary';
+import { V2ChartsThumbnail } from './presentation/slides/Plano personalizadov2/V2ChartsSlide';
 
 function PresentationStudio({
   profileId,
@@ -34,6 +37,7 @@ function PresentationStudio({
   initialMonthlyCost,
 }) {
   const [activeDeckId, setActiveDeckId] = useState(DEFAULT_PRESENTATION_DECK_ID);
+  const [clientName, setClientName] = useState(PLANO_V2_DEFAULT_CLIENT_NAME);
   const [activeSlide, setActiveSlide] = useState('cover');
   const [slides, setSlides] = useState(() => createInitialPresentationSlides(DEFAULT_PRESENTATION_DECK_ID));
   const [isPresenting, setIsPresenting] = useState(false);
@@ -52,9 +56,13 @@ function PresentationStudio({
       }),
     [debtBreakdown, initialDebt, scenarioId]
   );
+  // Cada deck tem a sua biblioteca de textos: a v1 nunca usa a do Plano personalizado v2 e vice-versa.
   const presentationTextContent = useMemo(
-    () => getPresentationTextContent(questionnaireAnswers),
-    [questionnaireAnswers]
+    () =>
+      activeDeckId === PLANO_PERSONALIZADO_V2_DECK_ID
+        ? { ...getPlanoV2TextContent(questionnaireAnswers), clientName: clientName.trim() }
+        : getPresentationTextContent(questionnaireAnswers),
+    [activeDeckId, questionnaireAnswers, clientName]
   );
 
   const handleExportPdf = async () => {
@@ -206,6 +214,16 @@ function PresentationStudio({
             </select>
             <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-500" size={14} />
           </div>
+          {activeDeckId === PLANO_PERSONALIZADO_V2_DECK_ID ? (
+            <input
+              type="text"
+              value={clientName}
+              onChange={(event) => setClientName(event.target.value)}
+              placeholder="Nome do cliente"
+              aria-label="Nome do cliente"
+              className="w-[min(40vw,260px)] rounded-xl border border-slate-200 bg-[#f8f9fc] px-3.5 py-2.5 text-xs font-semibold text-[#1c2d7f] outline-none transition-colors placeholder:text-slate-400 hover:border-[#aeb9df] focus-visible:border-[#1c2d7f] focus-visible:ring-4 focus-visible:ring-[#1c2d7f]/10"
+            />
+          ) : null}
         </div>
 
         <div className="flex flex-wrap items-center gap-2 sm:justify-end sm:gap-2.5">
@@ -277,7 +295,9 @@ function PresentationStudio({
                     aria-label={`Selecionar slide ${slide.label}`}
                   >
                     <div className="aspect-[16/9] overflow-hidden rounded-[9px] border border-slate-200/80 bg-slate-50">
-                      {activeDeckId === HOMECASH_ULTRA_DECK_ID || activeDeckId === HOMECASH_ULTRA_CARTA_CONTEMPLADA_DECK_ID ? (
+                      {slide.kind === 'v2-charts' ? (
+                        <V2ChartsThumbnail chartProps={chartSlideProps} />
+                      ) : activeDeckId === HOMECASH_ULTRA_DECK_ID || activeDeckId === HOMECASH_ULTRA_CARTA_CONTEMPLADA_DECK_ID || activeDeckId === PLANO_PERSONALIZADO_V2_DECK_ID ? (
                         <PresentationSlideRenderer
                           slide={slide}
                           chartProps={chartSlideProps}

@@ -43,9 +43,45 @@ import { PropertyStartingPointSlide as CartaContempladaPropertyStartingPointSlid
 import { RepurchaseModelsSlide as CartaContempladaRepurchaseModelsSlide } from './slides/homecash-ultra-carta-contemplada/RepurchaseModelsSlide';
 import { SimulationSummarySlide as CartaContempladaSimulationSummarySlide } from './slides/homecash-ultra-carta-contemplada/SimulationSummarySlide';
 import { WhoWithYouSlide as CartaContempladaWhoWithYouSlide } from './slides/homecash-ultra-carta-contemplada/WhoWithYouSlide';
+import { V2AgendaSlide } from './slides/Plano personalizadov2/V2AgendaSlide';
+import { V2CoverSlide } from './slides/Plano personalizadov2/V2CoverSlide';
+import { V2MechanismSlide } from './slides/Plano personalizadov2/V2MechanismSlide';
+import { V2WhoWeAreSlide } from './slides/Plano personalizadov2/V2WhoWeAreSlide';
+import { V2ChartsSlide } from './slides/Plano personalizadov2/V2ChartsSlide';
+import { V2DiagnosticSlide } from './slides/Plano personalizadov2/V2DiagnosticSlide';
+import { V2SimulationSlide } from './slides/Plano personalizadov2/V2SimulationSlide';
+import { V2FirstDaySlide } from './slides/Plano personalizadov2/V2FirstDaySlide';
+import { V2StartMiddleEndSlide } from './slides/Plano personalizadov2/V2StartMiddleEndSlide';
+import { V2ExitSaleSlide } from './slides/Plano personalizadov2/V2ExitSaleSlide';
+import { V2HistorySlide } from './slides/Plano personalizadov2/V2HistorySlide';
+import { V2ClientsSlide } from './slides/Plano personalizadov2/V2ClientsSlide';
+import { V2NextStepsSlide } from './slides/Plano personalizadov2/V2NextStepsSlide';
+import { V2ClosingSlide } from './slides/Plano personalizadov2/V2ClosingSlide';
+import { V2SaleScenariosSlide } from './slides/Plano personalizadov2/V2SaleScenariosSlide';
+import { V2Exit12MonthsSlide } from './slides/Plano personalizadov2/V2Exit12MonthsSlide';
+import { V2Exit240MonthsSlide } from './slides/Plano personalizadov2/V2Exit240MonthsSlide';
+import { V2OxyProtectionSlide } from './slides/Plano personalizadov2/V2OxyProtectionSlide';
 import { DEFAULT_PRESENTATION_TEXT_CONTENT } from './presentationTextLibrary';
 
 const SLIDE_COMPONENTS = {
+  'v2-cover': V2CoverSlide,
+  'v2-agenda': V2AgendaSlide,
+  'v2-who-we-are': V2WhoWeAreSlide,
+  'v2-mechanism': V2MechanismSlide,
+  'v2-diagnostic': V2DiagnosticSlide,
+  'v2-charts': V2ChartsSlide,
+  'v2-simulation': V2SimulationSlide,
+  'v2-first-day': V2FirstDaySlide,
+  'v2-start-middle-end': V2StartMiddleEndSlide,
+  'v2-exit-sale': V2ExitSaleSlide,
+  'v2-history': V2HistorySlide,
+  'v2-clients': V2ClientsSlide,
+  'v2-next-steps': V2NextStepsSlide,
+  'v2-closing': V2ClosingSlide,
+  'v2-sale-scenarios': V2SaleScenariosSlide,
+  'v2-exit-12-months': V2Exit12MonthsSlide,
+  'v2-exit-240-months': V2Exit240MonthsSlide,
+  'v2-oxy-protection': V2OxyProtectionSlide,
   cover: CoverSlide,
   'who-we-are': WhoWeAreSlide,
   beginning: BeginningSlide,
@@ -99,12 +135,18 @@ export function PresentationSlideRenderer({ slide, chartProps, presentationTextC
   const slideProps =
     slide.kind === 'cover'
       ? { coverTitle: 'Plano de Liquidez Personalizada', clientName: 'Matheus Gomes' }
-      : {
-          ...chartProps,
-          presentationTextContent,
-          profileChartPage: slide.profileChartPage ?? 0,
-          variant: slide.variant
-        };
+      : slide.kind.startsWith('v2-')
+        ? {
+            chartProps,
+            presentationTextContent,
+            nav: { section: slide.section, pageNumber: slide.pageNumber, pageTotal: slide.pageTotal }
+          }
+        : {
+            ...chartProps,
+            presentationTextContent,
+            profileChartPage: slide.profileChartPage ?? 0,
+            variant: slide.variant
+          };
 
   return <SlideComponent {...slideProps} />;
 }
