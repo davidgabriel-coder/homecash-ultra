@@ -94,26 +94,21 @@ export const V2OxyProtectionSlide = ({ nav }) => (
       </div>
 
       <div className="flex h-[13.7cqw] shrink-0 gap-[1.04cqw]">
-        <div className="flex w-[14.95cqw] shrink-0 flex-col justify-between rounded-[1.25cqw] bg-[#235CE9] p-[1.46cqw] text-white">
+        <div className="flex flex-1 flex-col justify-between rounded-[1.25cqw] bg-[#235CE9] p-[1.46cqw] text-white">
           <p className="text-[0.885cqw] text-[#DCE3F7]">Parcela média</p>
           <p className="text-[2.71cqw] font-[700] leading-[2.92cqw] tracking-[-0.03em]">
             R$ 6.171<span className="text-[1.04cqw] tracking-normal text-[#DCE3F7]"> /mês</span>
           </p>
         </div>
 
-        <div className="flex w-[16.3cqw] shrink-0 flex-col justify-between rounded-[1.25cqw] bg-white p-[1.46cqw] ring-1 ring-[#1E203F14]">
+        <div className="flex flex-1 flex-col justify-between rounded-[1.25cqw] bg-white p-[1.46cqw] ring-1 ring-[#1E203F14]">
           <p className="text-[0.885cqw] text-[#5A5F7D]">CET a partir de</p>
           <p className="whitespace-nowrap text-[1.77cqw] font-[700] leading-[2.08cqw] tracking-[-0.03em] text-[#1C2D7F]">
             1,05% a.m. + IPCA
           </p>
         </div>
 
-        <div className="flex w-[15.05cqw] shrink-0 flex-col justify-between rounded-[1.25cqw] bg-white p-[1.46cqw] ring-1 ring-[#1E203F14]">
-          <p className="text-[0.885cqw] text-[#5A5F7D]">Financiado do valor da recompra</p>
-          <p className="text-[2.71cqw] font-[700] leading-[2.92cqw] tracking-[-0.03em] text-[#1C2D7F]">até 80%</p>
-        </div>
-
-        <div className="flex flex-1 flex-col justify-between rounded-[1.25cqw] bg-white px-[1.67cqw] py-[1.46cqw] ring-1 ring-[#1E203F14]">
+        <div className="flex flex-[2] flex-col justify-between rounded-[1.25cqw] bg-white px-[1.67cqw] py-[1.46cqw] ring-1 ring-[#1E203F14]">
           <div className="flex items-center justify-between">
             <img src={folhaLogo} alt="Folha de S.Paulo" className="h-[0.9cqw] object-contain object-left" />
             <span className="text-[0.73cqw] text-[#5A5F7D]">Painel S.A. · 13/10/2026</span>

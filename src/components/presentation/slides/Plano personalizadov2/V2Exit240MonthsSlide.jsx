@@ -81,7 +81,7 @@ export const V2Exit240MonthsSlide = ({ nav }) => (
       className="left-[48.18%] top-[31.3%] w-[45.94%]"
     />
     <Block tone="bg-[#235CE9]" className="left-[49.22%] top-[37.59%] h-[2.5cqw] w-[43.85%] text-[1.25cqw] font-[700]">
-      Financiamento OXY®
+      Financiamento
     </Block>
     <Block tone="bg-[#235CE9]" className="left-[49.22%] top-[43.15%] h-[4.17cqw] w-[21.51%] flex-col gap-[0.05cqw]">
       <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">
