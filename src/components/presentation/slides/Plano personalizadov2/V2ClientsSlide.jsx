@@ -1,5 +1,8 @@
-import { CircleCheck, Play, Users } from 'lucide-react';
+import { ArrowUpRight, CircleCheck, Play, Users } from 'lucide-react';
 import { V2Canvas, V2Card, V2Eyebrow, V2Header } from './v2Shared';
+
+// Depoimento completo do cliente (abre em nova aba a partir do slide).
+const TESTIMONIAL_VIDEO_URL = 'https://drive.google.com/file/d/1CDlXJmcu2Jf05TJqsiw6MwUggGbbUfaD/view?usp=drive_link';
 
 const IndexCard = ({ tone = 'white', title, value, label, Icon }) => {
   const isNavy = tone === 'navy';
@@ -65,9 +68,20 @@ export const V2ClientsSlide = ({ nav }) => (
           <p className="text-[1.25cqw] font-[500] leading-[1.4cqw]">Assistir ao depoimento</p>
         </div>
 
-        <p className="max-w-[39.6cqw] text-[1.56cqw] font-[700] leading-[2.08cqw] tracking-[-0.01em]">
-          Uma história real de quem encerrou a pressão e seguiu em frente.
-        </p>
+        <div className="flex items-end justify-between gap-[1.04cqw]">
+          <p className="max-w-[39.6cqw] text-[1.56cqw] font-[700] leading-[2.08cqw] tracking-[-0.01em]">
+            Uma história real de quem encerrou a pressão e seguiu em frente.
+          </p>
+          <a
+            href={TESTIMONIAL_VIDEO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex shrink-0 items-center gap-[0.52cqw] whitespace-nowrap rounded-full bg-white px-[1.04cqw] py-[0.52cqw] text-[0.94cqw] font-[500] text-[#1C2D7F] no-underline transition-colors hover:bg-[#BCCAE9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+          >
+            Ver depoimento completo
+            <ArrowUpRight className="h-[1cqw] w-[1cqw] transition-transform group-hover:translate-x-[0.15cqw] group-hover:-translate-y-[0.15cqw]" strokeWidth={2} aria-hidden="true" />
+          </a>
+        </div>
       </V2Card>
     </div>
 
