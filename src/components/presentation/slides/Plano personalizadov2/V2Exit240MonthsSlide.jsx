@@ -1,5 +1,12 @@
 import { Calendar, ChevronDown, ChevronRight, DollarSign } from 'lucide-react';
 import { V2Canvas, V2Eyebrow, V2Header } from './v2Shared';
+import { formatBRL, formatPercent, getSavings } from './v2Format';
+
+// Totais do período (240 meses). Para trocar os valores, edite só estas duas constantes:
+// a economia em R$ e a porcentagem são calculadas a partir delas.
+const HOME_CASH_TOTAL = 1442858;
+const HOME_EQUITY_TOTAL = 1857209;
+const SAVINGS = getSavings(HOME_EQUITY_TOTAL, HOME_CASH_TOTAL);
 
 const Bar = ({ icon: Icon, label, tone, className }) => (
   <div
@@ -41,8 +48,12 @@ export const V2Exit240MonthsSlide = ({ nav }) => (
       <div className="flex h-[2.5cqw] items-center justify-center rounded-[0.63cqw] bg-[#157A38] text-[1.04cqw] text-white">
         <span>Economia total com o <strong>HomeCash®</strong></span>
       </div>
-      <div className="flex h-[3.33cqw] items-center justify-center rounded-[0.63cqw] bg-[#157A38] text-[2.29cqw] font-[700] tracking-[-0.03em] text-white">
-        R$ 414.351
+      <div className="flex h-[3.33cqw] items-center justify-center gap-[0.8cqw] rounded-[0.63cqw] bg-[#157A38] text-[2.29cqw] font-[700] tracking-[-0.03em] text-white">
+        <span>{formatBRL(SAVINGS.amount)}</span>
+        {/* Economia sobre o custo total do Home Equity: (Home Equity − HomeCash) / Home Equity. */}
+        <span className="whitespace-nowrap rounded-full bg-white/20 px-[0.73cqw] py-[0.25cqw] text-[0.78cqw] font-[500] tracking-normal">
+          {formatPercent(SAVINGS.percent)} a menos que o Home Equity
+        </span>
       </div>
     </div>
 
@@ -90,7 +101,7 @@ export const V2Exit240MonthsSlide = ({ nav }) => (
       <span className="text-[0.68cqw] leading-[0.83cqw] text-[#DCE3F7]">parcela média</span>
     </Block>
     <Block tone="bg-[#235CE9]" className="left-[71.61%] top-[43.15%] h-[4.17cqw] w-[21.46%] flex-col gap-[0.05cqw]">
-      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">R$ 1.442.858</span>
+      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">{formatBRL(HOME_CASH_TOTAL)}</span>
       <span className="text-[0.68cqw] leading-[0.83cqw] text-[#DCE3F7]">Total no período</span>
     </Block>
 
@@ -115,13 +126,14 @@ export const V2Exit240MonthsSlide = ({ nav }) => (
     </Block>
     <Block tone="bg-[#BD3126]" className="left-[59.53%] top-[77.69%] h-[4.06cqw] w-[33.54%] flex-col gap-[0.05cqw]">
       <span className="text-[0.68cqw] leading-[0.83cqw] text-[#DCE3F7]">Total no período</span>
-      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">R$ 1.857.209</span>
+      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">{formatBRL(HOME_EQUITY_TOTAL)}</span>
     </Block>
 
     <p className="absolute left-[5%] right-[5%] top-[89.81%] text-center text-[0.78cqw] leading-[1.15cqw] text-[#5A5F7D]">
       *O contrato de locação pede três aluguéis como caução. **Valores simulados em 24/08/2026 para financiamento
-      imobiliário nos principais bancos do Brasil, modalidade SAC, sujeitos a alterações de mercado, para financiar a
-      recompra do imóvel no HomeCash (parcela 1: R$ 9.473 / parcela 240: R$ 3.512). Condicionado à aprovação da
+      imobiliário nos principais bancos do Brasil, modalidade SAC, com custo simulado de 13% a.a. + TR, sujeitos a
+      alterações de mercado, para financiar a recompra do imóvel no HomeCash (parcela 1: R$ 9.473 / parcela 240:
+      R$ 3.512). Condicionado à aprovação da
       instituição financeira e do crédito. Home Equity: menor taxa encontrada em pesquisa com 18 instituições em
       24/08/2026, CET de 1,70% a.m. + IPCA anual de 5,50%, prazo de 240 meses.
     </p>

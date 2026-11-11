@@ -52,8 +52,9 @@ Não entram no slide (texto original do motor): J (M1), N (M2), AA (M4). Os valo
 3. **P (M3) também varia pela situação.** O mapa diz "Objetivo + Solução"; na prática o subtítulo muda com a situação também.
 4. **O (M2) varia por solução nos IDs 69 a 72** (mesmo objetivo e situação "Pendências jurídicas", soluções diferentes). Também resolvido pela linha inteira.
 5. **Título "3 etapas" deixa de ser azul.** Antes a v2 destacava "3 etapas" e "recuperar sua estabilidade". A planilha só destaca o trecho entre `[ ]`, e o PDF do v8 mostra assim. Visualmente muda.
-6. **Selo "No seu caso, {primeiro nome}" não tem nome.** A v2 não recebe o nome do cliente; o selo continua "No seu caso". Falta a fonte do nome para ligar.
+6. **Selo "No seu caso, {primeiro nome}"** agora usa o nome do cliente (campo no Studio, padrão em `PLANO_V2_DEFAULT_CLIENT_NAME`); sem nome, fica "No seu caso". A fonte real do nome ainda depende de integração.
 7. **Padrão (ID 13) muda o encerramento.** Como o padrão agora vem da planilha, o slide "Obrigado" sem respostas mostra o texto do item 1 (AD).
+8. **Número grande "R$ 100 mi" virou "R$ 200 mi" na biblioteca (56 IDs), por decisão do usuário.** A planilha ainda diz "R$ 100 mi" (coluna L da Tabela Completa; aba "Versão Slide", coluna D). Regenerar a biblioteca a partir da planilha desfaz a mudança; para mantê-la, altere também a planilha. Os 20 IDs com "R$ 1 bi" não mudaram.
 
 ### Limites de caracteres
 

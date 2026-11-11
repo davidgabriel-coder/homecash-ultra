@@ -1,14 +1,15 @@
 import { ArrowUpRight, BookOpen, Lightbulb } from 'lucide-react';
+import b3Logo from '../../../../assets/plano-v2/v2-logo-b3.svg';
+import btgLogo from '../../../../assets/plano-v2/v2-logo-btg.svg';
 import danielGavaPhoto from '../../../../assets/plano-v2/v2-quem-somos-daniel-gava.jpg';
 import exameLogo from '../../../../assets/plano-v2/v2-logo-exame.svg';
 import folhaLogo from '../../../../assets/plano-v2/v2-logo-folha.svg';
+import galapagosCapitalLogo from '../../../../assets/plano-v2/v2-logo-galapagos-capital.svg';
 import moneyTimesLogo from '../../../../assets/plano-v2/v2-logo-money-times.svg';
 import valorEconomicoLogo from '../../../../assets/plano-v2/v2-logo-valor-economico.svg';
 import { DEFAULT_PLANO_V2_TEXT_CONTENT } from './planoPersonalizadoV2TextLibrary';
 import { renderBracketHighlight } from './v2TextHighlight';
 import { V2Canvas, V2Card, V2Eyebrow, V2Header } from './v2Shared';
-
-const PRESSURE_TAGS = ['Parcelas atrasadas', 'Dívidas', 'CPF travado', 'Processos judiciais'];
 
 // Punchline em 3 partes (planilha: K acima do número, L número em destaque, M abaixo).
 const PunchlineFigure = ({ top, number, bottom }) => {
@@ -47,8 +48,7 @@ export const V2WhoWeAreSlide = ({ presentationTextContent = DEFAULT_PLANO_V2_TEX
 
     <div className="absolute bottom-[9.1%] left-[5%] top-[25.9%] flex w-[27.1%] flex-col gap-[1.04cqw]">
       <V2Card className="flex min-h-0 flex-1 flex-col justify-between">
-        <div className="flex items-start justify-between">
-          <V2Eyebrow className="text-[0.95cqw]">+15 anos</V2Eyebrow>
+        <div className="flex items-start justify-end">
           <IconBox className="bg-[#E5E7F4] text-[#235CE9]">
             <BookOpen className="h-[1.1cqw] w-[1.1cqw]" strokeWidth={1.8} aria-hidden="true" />
           </IconBox>
@@ -81,21 +81,20 @@ export const V2WhoWeAreSlide = ({ presentationTextContent = DEFAULT_PLANO_V2_TEX
     </div>
 
     <div className="absolute bottom-[9.1%] left-[33.5%] top-[25.9%] flex w-[27.1%] flex-col gap-[1.04cqw]">
-      <V2Card className="flex h-[48.6%] shrink-0 flex-col gap-[0.9cqw]">
+      <V2Card className="flex h-[28%] shrink-0 flex-col gap-[0.9cqw]">
         <h2 className="text-[1.5cqw] font-[700] leading-[1.15] tracking-[-0.02em]">O que é um imóvel sob pressão?</h2>
         <p className="text-[0.95cqw] leading-[1.45] text-[#5A5F7D]">
           É um ativo afetado por questões financeiras, jurídicas ou operacionais, que reduzem o tempo de decisão e aumentam o
           risco de perda patrimonial.
         </p>
-        <div className="mt-auto flex flex-wrap gap-[0.5cqw]">
-          {PRESSURE_TAGS.map((tag) => (
-            <span key={tag} className="rounded-full bg-[#E5E7F4] px-[0.9cqw] py-[0.35cqw] text-[0.85cqw] font-[500] text-[#1C2D7F]">
-              {tag}
-            </span>
-          ))}
-          <span className="rounded-full bg-[#C42A1E]/10 px-[0.9cqw] py-[0.35cqw] text-[0.85cqw] font-[500] text-[#C42A1E]">
-            Risco de leilão
-          </span>
+      </V2Card>
+
+      <V2Card className="flex h-[17.8%] shrink-0 flex-col justify-center gap-[0.8cqw] !px-[1.67cqw] !py-[1.04cqw]">
+        <span className="text-[0.8cqw] uppercase tracking-[0.1em] text-[#5A5F7D]">Marcas que confiam na Rooftop</span>
+        <div className="flex items-center justify-between">
+          <img src={btgLogo} alt="BTG Pactual" className="h-[2.4cqw] object-contain" />
+          <img src={galapagosCapitalLogo} alt="Galapagos Capital" className="h-[2cqw] object-contain" />
+          <img src={b3Logo} alt="B3" className="h-[2.4cqw] object-contain" />
         </div>
       </V2Card>
 
@@ -115,7 +114,7 @@ export const V2WhoWeAreSlide = ({ presentationTextContent = DEFAULT_PLANO_V2_TEX
           className="absolute -top-[2%] left-[27%] h-[157%] w-[97.7%] object-cover object-center"
         />
         <div className="absolute inset-y-0 left-0 w-[63.5%] bg-[linear-gradient(90deg,#FFFFFF_0%,#FFFFFF_45%,rgba(255,255,255,0)_100%)]" />
-        <img src={exameLogo} alt="" aria-hidden="true" className="absolute left-[1.35cqw] top-[1.04cqw] w-[10.4cqw] object-contain object-left" />
+        <img src={exameLogo} alt="" aria-hidden="true" className="absolute left-[1.35cqw] top-[1.04cqw] w-[7cqw] object-contain object-left" />
         <blockquote className="absolute left-[1.67cqw] top-[3.6cqw] w-[14cqw] border-l-2 border-[#235CE9] pl-[0.6cqw]">
           <p className="text-[0.72cqw] italic leading-[0.98cqw] text-[#1C2D7F]">
             &ldquo;O mercado todo se posicionava contra o devedor. Ele identificava um problema&hellip;&rdquo;

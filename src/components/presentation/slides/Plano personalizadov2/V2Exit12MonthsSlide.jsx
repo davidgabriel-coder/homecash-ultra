@@ -1,5 +1,12 @@
 import { Calendar, ChevronDown, ChevronRight, DollarSign, TriangleAlert } from 'lucide-react';
 import { V2Canvas, V2Eyebrow, V2Header } from './v2Shared';
+import { formatBRL, formatPercent, getSavings } from './v2Format';
+
+// Totais do período (12 meses). Para trocar os valores, edite só estas duas constantes:
+// a economia em R$ e a porcentagem são calculadas a partir delas.
+const HOME_CASH_TOTAL = 43200;
+const HOME_EQUITY_TOTAL = 103658;
+const SAVINGS = getSavings(HOME_EQUITY_TOTAL, HOME_CASH_TOTAL);
 
 const Bar = ({ icon: Icon, label, tone, className }) => (
   <div
@@ -41,8 +48,12 @@ export const V2Exit12MonthsSlide = ({ nav }) => (
       <div className="flex h-[2.5cqw] items-center justify-center rounded-[0.63cqw] bg-[#157A38] text-[1.04cqw] text-white">
         <span>Economia nos primeiros <strong>12 meses</strong> com o <strong>HomeCash®</strong></span>
       </div>
-      <div className="flex h-[3.33cqw] items-center justify-center rounded-[0.63cqw] bg-[#157A38] text-[2.29cqw] font-[700] tracking-[-0.03em] text-white">
-        R$ 60.458
+      <div className="flex h-[3.33cqw] items-center justify-center gap-[0.8cqw] rounded-[0.63cqw] bg-[#157A38] text-[2.29cqw] font-[700] tracking-[-0.03em] text-white">
+        <span>{formatBRL(SAVINGS.amount)}</span>
+        {/* Economia sobre o custo do Home Equity no período: (Home Equity − HomeCash) / Home Equity. */}
+        <span className="whitespace-nowrap rounded-full bg-white/20 px-[0.73cqw] py-[0.25cqw] text-[0.78cqw] font-[500] tracking-normal">
+          {formatPercent(SAVINGS.percent)} a menos que o Home Equity
+        </span>
       </div>
     </div>
 
@@ -70,7 +81,7 @@ export const V2Exit12MonthsSlide = ({ nav }) => (
       <span className="text-[0.68cqw] leading-[0.83cqw] text-[#DCE3F7]">valor vigente durante o período da operação</span>
     </Block>
     <Block tone="bg-[#235CE9]" className="left-[59.48%] top-[43.15%] h-[4.17cqw] w-[33.65%] flex-col gap-[0.05cqw]">
-      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">R$ 43.200</span>
+      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">{formatBRL(HOME_CASH_TOTAL)}</span>
       <span className="text-[0.68cqw] leading-[0.83cqw] text-[#DCE3F7]">Soma no período</span>
     </Block>
 
@@ -89,7 +100,7 @@ export const V2Exit12MonthsSlide = ({ nav }) => (
     </Block>
     <Block tone="bg-[#BD3126]" className="left-[59.53%] top-[75.83%] h-[4.06cqw] w-[33.54%] flex-col gap-[0.05cqw]">
       <span className="text-[0.68cqw] leading-[0.83cqw]">Soma no período</span>
-      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">R$ 103.658</span>
+      <span className="text-[1.67cqw] font-[700] leading-[2.08cqw] tracking-[-0.02em]">{formatBRL(HOME_EQUITY_TOTAL)}</span>
     </Block>
 
     <div className="absolute left-[5%] right-[5%] top-[87.96%] flex items-center gap-[1.67cqw]">
